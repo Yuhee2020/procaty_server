@@ -83,16 +83,16 @@ export const env: Env = cleanEnv(process.env, {
   GLOBAL_ADMIN_EMAIL: str({ default: "" }),
   GLOBAL_ADMIN_FNAME: str({ default: "Dmitry" }),
   GLOBAL_ADMIN_LNAME: str({ default: "Yuhimuk" }),
-  FRONT_LOCAL_URL: str({ default: "http://localhost:3000/" }),
+  FRONT_LOCAL_URL: str({ default: "http://localhost:3000" }),
   FRONT_FBASE_URL: str({ default: "" }), //TODO: change to fb link
-  FRONT_ADMIN_LOCAL_URL: str({ default: "http://localhost:4000/" }),
+  FRONT_ADMIN_LOCAL_URL: str({ default: "http://localhost:4000" }),
   FRONT_ADMIN_FBASE_URL: str({ default: "" }), //TODO: change to fb link
-  FRONT_URL: str({ default: "https://prokaty.vercel.app/" }),
+  FRONT_URL: str({ default: "https://prokaty.vercel.app" }),
   // FRONT_URL: str({ default: "" }),
-  FRONT_WWW_URL: str({ default: "https://prokaty.vercel.app/" }),
+  FRONT_WWW_URL: str({ default: "https://prokaty.vercel.app" }),
   // FRONT_WWW_URL: str({ default: "" }),
   FRONT_STAGING_URL: str({
-    default: "https://prokaty.vercel.app/",
+    default: "https://prokaty.vercel.app",
   }),
   // FRONT_STAGING_URL: str({
   //   default: "",
