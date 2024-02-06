@@ -88,6 +88,7 @@ async function startServer(app: Application) {
             // "https://networkio.io/",
             // "https://staging.networkio.io/",
             "https://studio.apollographql.com",
+            "http://localhost:3000/",
             env.FRONT_URL,
             env.FRONT_ADMIN_FBASE_URL,
             env.FRONT_ADMIN_LOCAL_URL,
