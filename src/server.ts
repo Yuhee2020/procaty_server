@@ -10,7 +10,6 @@ import "reflect-metadata";
 import { buildSchema } from "type-graphql";
 import { Container } from "typedi";
 import { env } from "./env";
-// import {UserResolver} from "./graphql";
 import { createUHLogger } from "./helpers";
 import { NotificationType, UserRole } from "./lib";
 import { authChecker } from "./middleware";
@@ -19,7 +18,6 @@ import {UserResolver} from "./graphql/user";
 import {refreshToken} from "./routes/refreshToken";
 import LoginLogModel from "./models/loginLog/LoginLogModel";
 
-// import { refreshToken } from "./routes";
 
 const bodyParser = require("body-parser");
 const log = createUHLogger({ name: "server" });
@@ -117,7 +115,9 @@ async function startServer(app: Application) {
         }),
         introspection: true,
       });
+
       await server.start();
+
       // @ts-ignore
       server.applyMiddleware({ app, path: "/api", cors: false });
 
