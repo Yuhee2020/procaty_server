@@ -119,7 +119,7 @@ async function startServer(app: Application) {
       });
       await server.start();
       // @ts-ignore
-      server.applyMiddleware({ app, path: "/api", cors: true });
+      server.applyMiddleware({ app, path: "/api", cors: false });
 
       const httpServer = http.createServer(app);
       httpServer.listen({ port: env.PORT }, () => {
