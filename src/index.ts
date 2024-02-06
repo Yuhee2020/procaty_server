@@ -1,4 +1,4 @@
-import "reflect-metadata";
+// import "reflect-metadata";
 import { createUHLogger } from "./helpers/Log";
 import express from "express";
 import startServer from "./server";
