@@ -1,6 +1,8 @@
 {
   "version": 2,
   "rewrites": [{ "source": "/(.*)", "destination": "/api" }],
+  "buildCommand": "next build",
+  "installCommand": "npm install",
   "builds": [
     {
       "src": "dist/src/index.js",
