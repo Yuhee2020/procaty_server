@@ -1,0 +1,7 @@
+1. Customer Job Preferences: define questions + options (for preferential search adjustments)
+2. Examples of products available for one time purchase (ebook, video, podcast, guide, ...)
+3. subscription plans: per year | per month 
+4. Courses - not in the first version. Example of a course? 
+5. Industry - enum or dynamic collection based on values fetched from imported jobs?
+
+
