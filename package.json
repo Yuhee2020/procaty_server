@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/index.ts",
-    "build": "tsc && npm run copy:assets",
-    "copy:assets": "cpx 'src/assets/**' 'dist/assets'",
+    "build": "tsc",
     "parser": "nodemon --watch 'src/utils/parser.ts' --exec 'ts-node' src/utils/parser.ts"
   },
   "keywords": [],
