@@ -82,9 +82,6 @@ async function startServer(app: Application) {
         cors({
           credentials: true,
           origin: [
-            // /\.networkio\.io$/,
-            // "https://networkio.io/",
-            // "https://staging.networkio.io/",
             "https://studio.apollographql.com",
             "http://localhost:3000",
             "https://prokaty.vercel.app",
