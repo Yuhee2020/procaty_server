@@ -65,7 +65,7 @@ async function startServer(app: Application) {
     resolvers: [
       UserResolver,
     ],
-    emitSchemaFile: path.resolve(__dirname, "dist/schema.gql"),
+    emitSchemaFile: path.resolve(__dirname, "schema.gql"),
     authChecker,
     authMode: "error",
     container: Container,
