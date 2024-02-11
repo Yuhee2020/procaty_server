@@ -70,17 +70,17 @@ async function startServer(app: Application) {
   Container.set({ id: "LOGIN_LOG", factory: () => LoginLogModel });
 
 
-  //GQL Schema
-  // const schema = await buildSchema({
-  //   resolvers: [
-  //     UserResolver,
-  //   ],
-  //   emitSchemaFile: path.resolve(__dirname, "schema.gql"),
-  //   authChecker,
-  //   authMode: "error",
-  //   container: Container,
-  //   dateScalarMode: "isoDate",
-  // });
+  // GQL Schema
+  const schema = await buildSchema({
+    resolvers: [
+      UserResolver,
+    ],
+    // emitSchemaFile: path.resolve(__dirname, "schema.gql"),
+    authChecker,
+    authMode: "error",
+    container: Container,
+    dateScalarMode: "isoDate",
+  });
   const dbUrl = `mongodb+srv://${env.DB_USER}:${env.DB_PASSWORD}@prokaty.ckeb2et.mongodb.net/?retryWrites=true&w=majority`;
 
   mongoose
@@ -115,8 +115,7 @@ async function startServer(app: Application) {
 
       //GQL Server
       const server = new ApolloServer({
-        typeDefs,
-        resolvers,
+        schema,
         context: ({ req, res}) => ({
           req,
           res,
