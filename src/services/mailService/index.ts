@@ -25,7 +25,7 @@ export class MailService {
   @Inject(() => PostmarkProvider)
   private readonly _postmarkProvider: PostmarkProvider;
 
-  protected readonly log: Logger = createUHLogger({ name: "mailService" });
+  // protected readonly log: Logger = createUHLogger({ name: "mailService" });
 
   // async notifyOnError(error: string, subject: string) {
   //   try {

@@ -20,7 +20,7 @@ export class LogService {
     @Inject("LOGIN_LOG") private readonly _logRepository: ILoginLogModel
   ) {}
 
-  protected readonly log: Logger = createUHLogger({ name: "logService" });
+  // protected readonly log: Logger = createUHLogger({ name: "logService" });
 
   async fetch(paginationOptions: PaginationOptionsArgs): Promise<ILoginLog[]> {
     const sortObj: any = {};

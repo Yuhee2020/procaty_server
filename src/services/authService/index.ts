@@ -13,7 +13,7 @@ import {UserService} from "../userService";
 
 @Service()
 export class AuthService {
-  protected readonly log: Logger = createUHLogger({ name: "authService" });
+  // protected readonly log: Logger = createUHLogger({ name: "authService" });
 
   @Inject(() => UserService)
   private readonly _userService: UserService;

@@ -38,7 +38,7 @@ export class PostmarkProvider {
   // @Inject(() => JobService)
   // private readonly _jobService: JobService;
 
-  protected readonly log: Logger = createUHLogger({ name: "postmarkProvider" });
+  // protected readonly log: Logger = createUHLogger({ name: "postmarkProvider" });
 
   async sendResetPasswordTemplate({
     link,

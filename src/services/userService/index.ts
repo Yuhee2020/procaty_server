@@ -66,7 +66,7 @@ export class UserService {
   // @Inject(() => PreferenceService)
   // private readonly _prefService: PreferenceService;
 
-  protected readonly log: Logger = createUHLogger({ name: "userService" });
+  // protected readonly log: Logger = createUHLogger({ name: "userService" });
 
   // async uploadFile(src: string, actor: IUser): Promise<string> {
   //   const { url } = await this._fileService.upload(
@@ -327,10 +327,10 @@ export class UserService {
 
       return true;
     } catch (error) {
-      this.log.error(
-        { email, user, error },
-        "forgotPassword(email) thrown error."
-      );
+      // this.log.error(
+      //   { email, user, error },
+      //   "forgotPassword(email) thrown error."
+      // );
       throw new Error(error);
     }
   }
@@ -576,7 +576,7 @@ export class UserService {
         };
       }
     } catch (error) {
-      this.log.error({ token, error }, ".verifyEmailLink(token) thrown error.");
+      // this.log.error({ token, error }, ".verifyEmailLink(token) thrown error.");
       throw new Error(error);
     }
   }
@@ -675,10 +675,10 @@ export class UserService {
       await this._mailService.sendVerificationLink(user, "signUp");
     } catch (err) {
       await user.deleteOne();
-      this.log.error(
-        { email, user, err },
-        ".signUp(input) thrown error."
-      );
+      // this.log.error(
+      //   { email, user, err },
+      //   ".signUp(input) thrown error."
+      // );
       throw new Error(err);
     }
 
@@ -764,10 +764,10 @@ export class UserService {
         })
         .exec();
     } catch (error) {
-      this.log.error(
-        { email, error },
-        ".signInByEmail(email, password) thrown error."
-      );
+      // this.log.error(
+      //   { email, error },
+      //   ".signInByEmail(email, password) thrown error."
+      // );
       throw new Error(error);
     }
 
@@ -797,20 +797,20 @@ export class UserService {
     try {
       const firstTimeLogin = await this._logService.addLogEntry(user, req);
 
-      this.log.info(
-        { email, user },
-        ".signInByEmail(email, password) executed."
-      );
+      // this.log.info(
+      //   { email, user },
+      //   ".signInByEmail(email, password) executed."
+      // );
 
       return {
         object: user,
         firstTimeLogin,
       };
     } catch (error) {
-      this.log.error(
-        { email, user, error },
-        ".signInByEmail(email, password) thrown error."
-      );
+      // this.log.error(
+      //   { email, user, error },
+      //   ".signInByEmail(email, password) thrown error."
+      // );
       throw new Error(error);
     }
   }
@@ -910,10 +910,10 @@ export class UserService {
       await session.commitTransaction();
     } catch (error) {
       await session.abortTransaction();
-      this.log.error(
-        { token, res, error },
-        ".resetPassword(token, password) thrown error"
-      );
+      // this.log.error(
+      //   { token, res, error },
+      //   ".resetPassword(token, password) thrown error"
+      // );
       throw new Error(error);
     } finally {
       res.$session(undefined);
