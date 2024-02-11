@@ -20,7 +20,7 @@ import LoginLogModel from "./models/loginLog/LoginLogModel";
 
 
 const bodyParser = require("body-parser");
-const log = createUHLogger({ name: "server" });
+// const log = createUHLogger({ name: "server" });
 
 // async function _onDBConnect() {
 //   //that's important to see even if logs disabled, do not remove!
