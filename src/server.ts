@@ -1,4 +1,4 @@
-import { ApolloServer } from "apollo-server-express";
+import {ApolloServer, gql} from "apollo-server-express";
 import argon2 from "argon2";
 import cookieParser from "cookie-parser";
 import cors from "cors";
@@ -18,7 +18,17 @@ import {UserResolver} from "./graphql/user";
 import {refreshToken} from "./routes/refreshToken";
 import LoginLogModel from "./models/loginLog/LoginLogModel";
 
+const typeDefs = gql`
+    type Query {
+        hello: String
+    }
+`;
 
+const resolvers = {
+  Query: {
+    hello: () => "world",
+  },
+};
 const bodyParser = require("body-parser");
 // const log = createUHLogger({ name: "server" });
 
@@ -61,16 +71,16 @@ async function startServer(app: Application) {
 
 
   //GQL Schema
-  const schema = await buildSchema({
-    resolvers: [
-      UserResolver,
-    ],
-    emitSchemaFile: path.resolve(__dirname, "schema.gql"),
-    authChecker,
-    authMode: "error",
-    container: Container,
-    dateScalarMode: "isoDate",
-  });
+  // const schema = await buildSchema({
+  //   resolvers: [
+  //     UserResolver,
+  //   ],
+  //   emitSchemaFile: path.resolve(__dirname, "schema.gql"),
+  //   authChecker,
+  //   authMode: "error",
+  //   container: Container,
+  //   dateScalarMode: "isoDate",
+  // });
   const dbUrl = `mongodb+srv://${env.DB_USER}:${env.DB_PASSWORD}@prokaty.ckeb2et.mongodb.net/?retryWrites=true&w=majority`;
 
   mongoose
@@ -105,7 +115,8 @@ async function startServer(app: Application) {
 
       //GQL Server
       const server = new ApolloServer({
-        schema,
+        typeDefs,
+        resolvers,
         context: ({ req, res}) => ({
           req,
           res,
