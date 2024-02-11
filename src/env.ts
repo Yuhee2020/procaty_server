@@ -65,7 +65,7 @@ export const env: Env = cleanEnv(process.env, {
     default: "development",
   }) as ValidatorSpec<Env["NODE_ENV"]>,
   PORT: port({ default: 5555 }),
-  LOGS_PATH: str({ default: ".dist/tmp/logs" }),
+  LOGS_PATH: str({ default: "./tmp/logs" }),
   LOG_LEVEL: str({
     choices: ["trace", "debug", "info", "warn", "error", "fatal"],
     default: "debug",
